@@ -1,4 +1,5 @@
 // EjercicioEsctructuras.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+// EjercicioEsctructuras.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 #include <iostream>
 using namespace std;
 
@@ -86,14 +87,10 @@ int main()
 
 bool MostrarRect(rect& r, int& xfin, int& yfin)
 {
-    if (r.coordx < 0)
+    //Modificacion(Se cambio la condicion)
+    if (r.coordx < 0 || r.coordy < 0 || r.alto < 0 || r.ancho < 0) // <-- cambio aquí
         return false;
-    if (r.coordy < 0)
-        return false;
-    if (r.alto < 0)
-        return false;
-    if (r.ancho < 0)
-        return false;
+
 
     xfin = r.coordx + r.ancho;
     yfin = r.coordy + r.alto;
@@ -111,21 +108,14 @@ bool CheckOverlap(rect r2, rect r3)
         return false;
     }
 
-    if (r3.coordx + r3.ancho <= r2.coordx)
+    //Modificacion(Se cambio la condicion)
+    if (r2.coordx + r2.ancho <= r3.coordx ||
+        r3.coordx + r3.ancho <= r2.coordx ||
+        r2.coordy + r2.alto <= r3.coordy ||
+        r3.coordy + r3.alto <= r2.coordy)
     {
         return false;
     }
-
-    if (r2.coordy + r2.alto <= r3.coordy)
-    {
-        return false;
-    }
-
-    if (r3.coordy + r3.alto <= r2.coordy)
-    {
-        return false;
-    }
-
     return true;
 }
 
