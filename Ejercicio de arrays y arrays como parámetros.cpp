@@ -1,29 +1,29 @@
 // Tarea2.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 
+
 #include <iostream>
 using namespace std;
 int myArray[10] = { 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 ,9 }; //1.3) Hacer un array de 10 enteros, inicializado con los valores del 0 al 9.
 bool ArrayBo[5]; //1) Hacer un array de 5 booleanos.
 
-void FuncArrayBool(bool Array1[], int tamano); //Declaro la funcion
-void FuncArrayBool(int Array1[], int tamano);
+void InitializeArray(bool Array1[], int tamano); //modificacion(Cambio del nombre de la funcion)
+void InitializeArray(int Array1[], int tamano);  //modificacion(Cambio del nombre de la funcion)
 
 int numeros[] = { 1, 2, 3, 4, 5 }; //declaro las variables para hacer la prueba de imprimir las direcciones de memoria
 int tamano = 5;
 
-
-
 int main()
 {
 
-    FuncArrayBool(numeros, tamano);
+    InitializeArray(numeros, tamano);//modificacion(Cambio del nombre de la funcion)
 
     return 0;
 }
 
 //1.1) Hacer una función que reciba un array de booleanos como parámetro, y el tamaño del array como otro parámetro.
 //1.2) En dicha función, los valores del array se modifican de manera que los índices pares sean false y los impares true.
-void FuncArrayBool(bool Array1[], int tamano)
+
+void InitializeArray(bool Array1[], int tamano)//modificacion(Cambio del nombre de la funcion)
 {
     for (int i = 0; i < tamano; i++) //recorre el array desde la primera posicion(con valor de 0) hasta la ultima (con valor de 9)
     {
@@ -35,7 +35,7 @@ void FuncArrayBool(bool Array1[], int tamano)
 //1.4) Hacer una sobrecarga (es decir: mismo nombre, mismo tipo de retorno, 
 //pero distintos parámetros) de la función del punto 1.1) pero que reciba un array de enteros en vez de booleanos. 
 
-void FuncArrayBool(int Array1[], int tamano)
+void InitializeArray(int Array1[], int tamano)//modificacion(Cambio del nombre de la funcion)
 {
     int* PuntAux = Array1; //creamos el puntero que apunta al inicio de nuestro array
 
